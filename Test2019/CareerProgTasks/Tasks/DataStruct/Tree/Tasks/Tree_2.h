@@ -16,6 +16,20 @@ struct TreeNode {
     TreeNode* m_rightPtr = nullptr;
 };
 
+TreeNode<int>* createBT(int* arr, int l, int r) {
+    
+    int idx = (l + r) / 2;
+    
+    TreeNode<int>* cur = new TreeNode<int>;
+    cur->m_data = *(arr + idx);
+    cur->m_leftPtr = createBT(arr, l, --idx);
+    cur->m_rightPtr = createBT(arr,++idx, r);
+    
+    return cur;
+}
+
+#pragma mark - main logic
+
 template<typename T>
 int maxDepth(TreeNode<T>* rootPtr) {
     if (rootPtr) {
@@ -31,7 +45,7 @@ int minDepth(TreeNode<T>* rootPtr) {
         return 0;
     }
     
-    return 1 + min(maxDepth(rootPtr->m_leftPtr), maxDepth(rootPtr->m_rightPtr));
+    return 1 + min(minDepth(rootPtr->m_leftPtr), minDepth(rootPtr->m_rightPtr)); // err ?????
 }
 
 template<typename T>
@@ -39,16 +53,5 @@ bool isBalanced(TreeNode<T>* rootPtr) {
     return (maxDepth(rootPtr) - minDepth(rootPtr));
 }
 
-TreeNode<int>* createBT(int* arr, int l, int r) {
-    
-    int idx = (l + r) / 2;
-    
-    TreeNode<int>* cur = new TreeNode<int>;
-    cur->m_data = *(arr + idx);
-    cur->m_leftPtr = createBT(arr, l, --idx);
-    cur->m_rightPtr = createBT(arr,++idx, r);
-    
-    return cur;
-}
 
 #endif /* Tree_2_h */
