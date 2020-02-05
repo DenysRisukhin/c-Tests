@@ -12,7 +12,8 @@
 // simple shared_ptr
 
 template<class T>
-class shared_ptr {
+class shared_ptr
+{
 public:
     
     // c-tor

@@ -32,10 +32,6 @@
 		9E3AE07823B4D4770053DA5A /* Transaction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Transaction.hpp; sourceTree = "<group>"; };
 		9E3AE07B23B4E04A0053DA5A /* PathFinding.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PathFinding.cpp; sourceTree = "<group>"; };
 		9E3AE07C23B4E04A0053DA5A /* PathFinding.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PathFinding.hpp; sourceTree = "<group>"; };
-		9E4218BB23C351540081904A /* TestsOOP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestsOOP.h; sourceTree = "<group>"; };
-		9E4218BD23C351880081904A /* KingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KingTests.h; sourceTree = "<group>"; };
-		9E4218BE23C352130081904A /* TestsSyntax.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestsSyntax.h; sourceTree = "<group>"; };
-		9E4218BF23C352430081904A /* TestsTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestsTemplate.h; sourceTree = "<group>"; };
 		9E4218C223C355CD0081904A /* QueueFrom2Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueueFrom2Stack.h; sourceTree = "<group>"; };
 		9E4218C423C357800081904A /* Cities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cities.h; sourceTree = "<group>"; };
 		9E4293F723D72AC600A3708C /* arrays_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrays_1.h; sourceTree = "<group>"; };
@@ -164,25 +160,6 @@
 			path = CareerProgTasks;
 			sourceTree = "<group>";
 		};
-		9E4218BA23C351330081904A /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				9E4218BC23C351680081904A /* KingTests */,
-				9E4218BB23C351540081904A /* TestsOOP.h */,
-				9E4218BE23C352130081904A /* TestsSyntax.h */,
-				9E4218BF23C352430081904A /* TestsTemplate.h */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		9E4218BC23C351680081904A /* KingTests */ = {
-			isa = PBXGroup;
-			children = (
-				9E4218BD23C351880081904A /* KingTests.h */,
-			);
-			path = KingTests;
-			sourceTree = "<group>";
-		};
 		9E4218C123C355AB0081904A /* Queue */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +223,7 @@
 			path = Array;
 			sourceTree = "<group>";
 		};
-		9E4293F823D739F400A3708C /* arithmetic */ = {
+		9E4293F823D739F400A3708C /* Arithmetic */ = {
 			isa = PBXGroup;
 			children = (
 				9E4294C823E582CA00A3708C /* arithmetic_1.h */,
@@ -261,7 +238,7 @@
 				9E4293F923D73A1000A3708C /* arithmetic_10.h */,
 				9E4294D023E5974500A3708C /* arithmetic_11.h */,
 			);
-			path = arithmetic;
+			path = Arithmetic;
 			sourceTree = "<group>";
 		};
 		9E4294B523DF580E00A3708C /* Matrix */ = {
@@ -302,14 +279,14 @@
 			path = Rand;
 			sourceTree = "<group>";
 		};
-		9E4294D123E7286D00A3708C /* bit */ = {
+		9E4294D123E7286D00A3708C /* Bit */ = {
 			isa = PBXGroup;
 			children = (
 				9E4294D223E7288300A3708C /* bit_1.h */,
 				9E4294D323E7289100A3708C /* bit_2.h */,
 				9E4294D423E728A100A3708C /* bit_3.h */,
 			);
-			path = bit;
+			path = Bit;
 			sourceTree = "<group>";
 		};
 		9E4294D723EACA1500A3708C /* CompaniesTasks */ = {
@@ -357,7 +334,6 @@
 		9E82B05122C2191200B669C2 /* Test2019 */ = {
 			isa = PBXGroup;
 			children = (
-				9E4218BA23C351330081904A /* Tests */,
 				9E3AE07E23B65B510053DA5A /* CareerProgTasks */,
 				9E3AE07623B4D42A0053DA5A /* Transactions */,
 				9EFF6F14233A184C00EA25FD /* Algorithms */,
@@ -403,8 +379,8 @@
 		9EFC53C722E5E282006C2D2F /* DataStruct */ = {
 			isa = PBXGroup;
 			children = (
-				9E4218C523C358890081904A /* Tree */,
 				9EFC53C822E5E2B5006C2D2F /* SmartPointers */,
+				9E4218C523C358890081904A /* Tree */,
 				9E3AE07A23B4DDF50053DA5A /* Graph */,
 				9E4218C123C355AB0081904A /* Queue */,
 				9EFC53C622E5D992006C2D2F /* Stack.h */,
@@ -431,16 +407,16 @@
 		9EFC53CD22EB7EC0006C2D2F /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				9E4294DE23EACB5400A3708C /* STL */,
 				9E4294D823EACA4100A3708C /* Games */,
+				9E4294DE23EACB5400A3708C /* STL */,
 				9E4294D723EACA1500A3708C /* CompaniesTasks */,
-				9E4294D123E7286D00A3708C /* bit */,
-				9E4293F823D739F400A3708C /* arithmetic */,
+				9E4294D123E7286D00A3708C /* Bit */,
+				9E4293F823D739F400A3708C /* Arithmetic */,
 				9E4293F623D72A9800A3708C /* Array */,
 				9E4294B523DF580E00A3708C /* Matrix */,
 				9E4294BB23DFE75400A3708C /* String */,
-				9E4294BC23DFE78700A3708C /* Rand */,
 				9EFC53C722E5E282006C2D2F /* DataStruct */,
+				9E4294BC23DFE78700A3708C /* Rand */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";

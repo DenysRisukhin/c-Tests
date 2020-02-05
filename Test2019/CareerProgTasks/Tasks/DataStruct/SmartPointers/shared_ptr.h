@@ -183,7 +183,35 @@ public:
 #endif /* shared_ptr_h */
     
 //  tests for own shared_pointer
-    
+
+//struct MediaAsset
+//{
+//    virtual ~MediaAsset() = default; // make it polymorphic
+//};
+//
+//struct Song : public MediaAsset
+//{
+//    Song(const std::wstring& artist_, const std::wstring& title_)
+//    : artist{ artist_ }, title{ title_ } {}
+//
+//    std::wstring artist;
+//    std::wstring title;
+//};
+//
+//struct Photo : public MediaAsset
+//{
+//    Photo(const std::wstring& date_,
+//          const std::wstring& location_,
+//          const std::wstring& subject_)
+//    : date{ date_ }, location{ location_ }, subject{ subject_ } {}
+//
+//    std::wstring date;
+//    std::wstring location;
+//    std::wstring subject;
+//};
+
+// main
+
 //    shared_ptr<int> p1;
 //    shared_ptr<int> p2 (nullptr);
 //    shared_ptr<C> p4 (new C);

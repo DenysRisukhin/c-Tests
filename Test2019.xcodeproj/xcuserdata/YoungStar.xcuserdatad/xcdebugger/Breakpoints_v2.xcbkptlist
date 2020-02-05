@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
             endingLineNumber = "165"
-            landmarkName = "strRevert(char* str)"
+            landmarkName = "closestToZero(int* arr, int size)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
