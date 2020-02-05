@@ -45,7 +45,7 @@ int minDepth(TreeNode<T>* rootPtr) {
         return 0;
     }
     
-    return 1 + min(minDepth(rootPtr->m_leftPtr), minDepth(rootPtr->m_rightPtr)); // err ?????
+    return 1 + min(minDepth(rootPtr->m_leftPtr), minDepth(rootPtr->m_rightPtr)); 
 }
 
 template<typename T>
