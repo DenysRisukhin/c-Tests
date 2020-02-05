@@ -38,7 +38,6 @@
 		9E4218BF23C352430081904A /* TestsTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestsTemplate.h; sourceTree = "<group>"; };
 		9E4218C223C355CD0081904A /* QueueFrom2Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueueFrom2Stack.h; sourceTree = "<group>"; };
 		9E4218C423C357800081904A /* Cities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cities.h; sourceTree = "<group>"; };
-		9E4218C723C358D70081904A /* isBalanced.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isBalanced.h; sourceTree = "<group>"; };
 		9E4293F723D72AC600A3708C /* arrays_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrays_1.h; sourceTree = "<group>"; };
 		9E4293F923D73A1000A3708C /* arithmetic_10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arithmetic_10.h; sourceTree = "<group>"; };
 		9E4293FA23D74DB900A3708C /* arithmetic_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arithmetic_4.h; sourceTree = "<group>"; };
@@ -94,6 +93,9 @@
 		9E4294DB23EACAC300A3708C /* Games_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Games_2.h; sourceTree = "<group>"; };
 		9E4294DC23EACAD500A3708C /* Games_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Games_3.h; sourceTree = "<group>"; };
 		9E4294DD23EACAE800A3708C /* Games_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Games_4.h; sourceTree = "<group>"; };
+		9E4294DF23EACE7700A3708C /* Tree_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_1.h; sourceTree = "<group>"; };
+		9E4294E023EACE8700A3708C /* Tree_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_2.h; sourceTree = "<group>"; };
+		9E4294E123EACE9500A3708C /* Tree_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_3.h; sourceTree = "<group>"; };
 		9E4F00FB23031FEA00A34B70 /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
 		9E5C539E231FBEF200D3ECF7 /* weak_ptr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = weak_ptr.h; sourceTree = "<group>"; };
 		9E60E30722D64CB70069397C /* dynamic_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dynamic_array.h; sourceTree = "<group>"; };
@@ -210,7 +212,9 @@
 		9E4218C623C358990081904A /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				9E4218C723C358D70081904A /* isBalanced.h */,
+				9E4294DF23EACE7700A3708C /* Tree_1.h */,
+				9E4294E023EACE8700A3708C /* Tree_2.h */,
+				9E4294E123EACE9500A3708C /* Tree_3.h */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";

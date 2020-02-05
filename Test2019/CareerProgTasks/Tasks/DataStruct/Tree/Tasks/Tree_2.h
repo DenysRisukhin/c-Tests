@@ -1,13 +1,13 @@
 //
-//  isBalanced.h
+//  Tree_2.h
 //  Test2019
 //
-//  Created by Denys Risukhin on 1/6/20.
+//  Created by Denys Risukhin on 2/5/20.
 //  Copyright © 2020 DenysRisukhin. All rights reserved.
 //
 
-#ifndef isBalanced_h
-#define isBalanced_h
+#ifndef Tree_2_h
+#define Tree_2_h
 
 template<typename T>
 struct TreeNode {
@@ -51,4 +51,4 @@ TreeNode<int>* createBT(int* arr, int l, int r) {
     return cur;
 }
 
-#endif /* isBalanced_h */
+#endif /* Tree_2_h */
