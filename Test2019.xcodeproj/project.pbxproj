@@ -89,9 +89,13 @@
 		9E4294DB23EACAC300A3708C /* Games_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Games_2.h; sourceTree = "<group>"; };
 		9E4294DC23EACAD500A3708C /* Games_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Games_3.h; sourceTree = "<group>"; };
 		9E4294DD23EACAE800A3708C /* Games_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Games_4.h; sourceTree = "<group>"; };
-		9E4294DF23EACE7700A3708C /* Tree_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_1.h; sourceTree = "<group>"; };
 		9E4294E023EACE8700A3708C /* Tree_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_2.h; sourceTree = "<group>"; };
 		9E4294E123EACE9500A3708C /* Tree_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_3.h; sourceTree = "<group>"; };
+		9E4294E223EB656100A3708C /* Tree_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_4.h; sourceTree = "<group>"; };
+		9E4294E323EB657100A3708C /* Tree_5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_5.h; sourceTree = "<group>"; };
+		9E4294E423ECABC300A3708C /* Tree_1_a.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_1_a.h; sourceTree = "<group>"; };
+		9E4294E523ECABD500A3708C /* Tree_1_b.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_1_b.h; sourceTree = "<group>"; };
+		9E4294E623ECABE400A3708C /* Tree_1_c.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_1_c.h; sourceTree = "<group>"; };
 		9E4F00FB23031FEA00A34B70 /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
 		9E5C539E231FBEF200D3ECF7 /* weak_ptr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = weak_ptr.h; sourceTree = "<group>"; };
 		9E60E30722D64CB70069397C /* dynamic_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dynamic_array.h; sourceTree = "<group>"; };
@@ -189,9 +193,13 @@
 		9E4218C623C358990081904A /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				9E4294DF23EACE7700A3708C /* Tree_1.h */,
+				9E4294E423ECABC300A3708C /* Tree_1_a.h */,
+				9E4294E523ECABD500A3708C /* Tree_1_b.h */,
+				9E4294E623ECABE400A3708C /* Tree_1_c.h */,
 				9E4294E023EACE8700A3708C /* Tree_2.h */,
 				9E4294E123EACE9500A3708C /* Tree_3.h */,
+				9E4294E223EB656100A3708C /* Tree_4.h */,
+				9E4294E323EB657100A3708C /* Tree_5.h */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";

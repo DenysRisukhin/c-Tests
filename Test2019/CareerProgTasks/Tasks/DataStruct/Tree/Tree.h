@@ -17,8 +17,7 @@ struct Node {
     T m_data;
     Node<T>* m_left = nullptr;
     Node<T>* m_right = nullptr;
-    Node<T>* m_nextPtr = nullptr;
-    
+      
     Node<T>* m_brother = nullptr;
     Node<T>* m_son = nullptr;
 };
