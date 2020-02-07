@@ -23,16 +23,25 @@ public:
         Node<T>* curNode = nullptr;
         bool isFound = false;
         
-        if (!this->m_rootNode) {
+        if (m_rootNode == nullptr)
+        {
             return false;
-        } else {
+        }
+        else
+        {
             curNode = this->m_rootNode;
-            while(curNode && isFound) {
-                if (curNode->m_data == data) {
+            while(curNode && isFound)
+            {
+                if (curNode->m_data == data)
+                {
                     isFound = true;
-                } else if (curNode->m_data > data) {
+                }
+                else if (curNode->m_data > data)
+                {
                     curNode = curNode->m_left;
-                } else {
+                }
+                else
+                {
                     curNode = curNode->m_right;
                 }
             }
@@ -45,24 +54,33 @@ public:
     // input : bool breadthFirstSearch(Node<T> rootNode, const T& data)
     // output: bool value
     
-    bool breadthFirstSearch(Node<T> rootNode, const T& data) {
-        if (!rootNode) {
+    bool breadthFirstSearch(Node<T> rootNode, const T& data)
+    {
+        if (!rootNode)
+        {
             return false;
         }
         
         std::queue<Node<T>> queueNodes;
         queueNodes.push(rootNode);
         
-        while (!queueNodes.empty()) {
+        while (!queueNodes.empty())
+        {
             auto tempNode = queueNodes.front();
-            queueNodes.pop();
+            //queueNodes.pop();
             
-            if (tempNode->m_data == data) {
+            if (tempNode->m_data == data)
+            {
                 return true;
-            } else {
-                if (tempNode->m_left) {
+            }
+            else
+            {
+                if (tempNode->m_left)
+                {
                     queueNodes.push(tempNode->m_left);
-                } else  if (tempNode->m_right) {
+                }
+                else if (tempNode->m_right)
+                {
                     queueNodes.push(tempNode->m_right);
                 }
             }
@@ -70,6 +88,7 @@ public:
         return false;
     }
     
+    // trail - хвост, след, тропа
     void insert(const T& data)
     {
         Node<T>* curNode = nullptr;
@@ -80,7 +99,7 @@ public:
         newNode->m_left = nullptr;
         newNode->m_right = nullptr;
         
-        if (!this->m_rootNode)
+        if (this->m_rootNode == nullptr)
         {
             this->m_rootNode = newNode;
         }
@@ -123,7 +142,8 @@ public:
         Node<T>* trailNode = nullptr;
         bool isFound = false;
         
-        if (!this->m_rootNode) {
+        if (this->m_rootNode == nullptr)
+        {
             return;
         }
         else
@@ -170,8 +190,8 @@ public:
                     removeNode(trailNode->m_right);
                 }
             }
-            
         }
+        
     }
     
 private:

@@ -23,7 +23,8 @@ struct Node
 #pragma mark - bynary tree
 
 template<class T>
-class binary_tree {
+class binary_tree
+{
 public:
     
     binary_tree() noexcept: m_rootNode(nullptr)
@@ -102,26 +103,33 @@ private:
     
     void postorder(Node<T>* rootNode) const noexcept
     {
-        if (rootNode) {
+        if (rootNode)
+        {
             inorder(rootNode->m_left);
             inorder(m_rootNode->m_right);
             std::cout << rootNode->m_data << std::endl;
         }
     }
     
-    void copy(Node<T>*& lNode, Node<T>* rNode) noexcept {
-        if (rNode == nullptr) {
-            lNode = nullptr;
-        } else {
-            lNode = new Node<T>();
-            lNode->m_data = rNode->m_data;
-            lNode->m_left = rNode->m_left;
-            lNode->m_right = rNode->m_right;
+    void copy(Node<T>*& rootNode, Node<T>* otherNode) noexcept
+    {
+        if (otherNode == nullptr)
+        {
+            rootNode = nullptr;
+        }
+        else
+        {
+            rootNode = new Node<T>();
+            rootNode->m_data = otherNode->m_data;
+            rootNode->m_left = otherNode->m_left;
+            rootNode->m_right = otherNode->m_right;
         }
     }
     
-    void destroy(Node<T>*& root) noexcept {
-        if (root) {
+    void destroy(Node<T>*& root) noexcept
+    {
+        if (root)
+        {
             destroy(root->m_left);
             destroy(root->m_right);
             delete root;
@@ -131,48 +139,62 @@ private:
     
     // special stuff
     
-    int getNodeCount(Node<T>* rootNode) const noexcept
+    int getNodeAmounts(Node<T>* rootNode) const noexcept
     {
-        if (rootNode) {
-            if (rootNode->m_left == nullptr && rootNode->m_right == nullptr) {
+        if (rootNode)
+        {
+            if (rootNode->m_left == nullptr && rootNode->m_right == nullptr)
+            {
                 return 1;
             }
             
             int left = 0;
             int right = 0;
             
-            if (rootNode->m_left) {
+            if (rootNode->m_left)
+            {
                 left = getNodeCount(rootNode->m_left);
-            } else {
+            }
+            else
+            {
                 left = 0;
             }
             
-            if (rootNode->m_right) {
+            if (rootNode->m_right)
+            {
                 right =  getNodeCount(rootNode->m_right);
-            } else {
+            }
+            else
+            {
                 right = 0;
             }
             
             return left + right + 1;
-        } else {
-            return 0;
         }
+       
+        return 0;
     }
     
     int getHeight(Node<T>* rootNode) const noexcept
     {
-        if (rootNode) {
+        if (rootNode)
+        {
             return 1 + max(getHeight(rootNode->m_left), getHeight(rootNode->m_right));
-        } else {
+        }
+        else
+        {
             return 0;
         }
     }
     
     int max(int l, int r)
     {
-        if (l >= r) {
+        if (l >= r)
+        {
             return l;
-        } else {
+        }
+        else
+        {
             return r;
         }
     }

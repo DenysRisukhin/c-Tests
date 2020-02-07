@@ -13,7 +13,8 @@
 #include <queue>
 
 template <class T>
-struct Node {
+struct Node
+{
     T m_data;
     Node<T>* m_left = nullptr;
     Node<T>* m_right = nullptr;
@@ -25,7 +26,8 @@ struct Node {
 #pragma mark - tree
 
 template<class T>
-class tree {
+class tree
+{
 public:
     tree(): m_rootNode(nullptr)
     {
