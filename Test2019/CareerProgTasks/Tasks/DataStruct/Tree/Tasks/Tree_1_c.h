@@ -53,7 +53,7 @@ private:
             return 0;
         }
         
-        return getNodeAmountFromLevel(node->m_son, level - 1) + (level == 1) + getNodeAmountFromLevel(node->m_brother, level);
+        return getNodeAmountFromLevel(node->m_son, level - 1) + (level == 1) + getNodeAmountFromLevel(node->m_brother, level); // WTF
     }
     
     int getHeight(Node<T>* node)
@@ -80,11 +80,17 @@ private:
     void add(Node<T>*& rootNode, const T& data)
     {
         if (!rootNode)
+        {
             rootNode = new Node<T>(rootNode);
+        }
         else if (data < rootNode->m_data)
+        {
             add(rootNode->m_son, data);
+        }
         else
+        {
             add(rootNode->m_brother, data);
+        }
     }
 };
 
