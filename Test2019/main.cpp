@@ -48,6 +48,8 @@
 
 #include "DelegateCocos.h"
 
+#include "linked_list.h"
+
 using namespace std;
 
 //#include "AbstractFactory.h"
