@@ -200,11 +200,13 @@ TreeNode* createMinimalBST(vector<int> numbers)
 
 int main()
 {
-    vector<int> numbers{12, 43, 2, 5, 34, 33};
+    linked_list<int> list;
+    list.insert(5);
+    list.insert(6);
+    list.insert(8);
     
-    sort(numbers.begin(), numbers.end());
+    list.print();
     
-    TreeNode* newRoot = createMinimalBST(numbers);
     
     cout << endl;
     

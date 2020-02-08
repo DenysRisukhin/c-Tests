@@ -20,7 +20,8 @@ struct LinkedNode
 };
 
 template<class T>
-class linked_list {
+class linked_list
+{
 public:
     linked_list() { m_first = m_last = nullptr; }
     
@@ -77,8 +78,14 @@ public:
             return;
         }
         
-        m_first = ref.m_first;
-        m_last = ref.m_last;
+        if (ref.isEmpty())
+        {
+            m_first = nullptr;
+        }
+        else
+        {
+            copy(m_first, ref.m_first);
+        }
         
         return *this;
     }
@@ -90,8 +97,14 @@ public:
             return;
         }
         
-        m_first = ref.m_first;
-        m_last = ref.m_last;
+        if (ref.isEmpty())
+        {
+            m_first = nullptr;
+        }
+        else
+        {
+            copy(m_first, ref.m_first);
+        }
         
         // is this correct?
         ref.m_first = nullptr;
@@ -289,14 +302,26 @@ public:
         m_first = meNodePtr;
     }
     
-    void print() const {}
+    void print() const
+    {
+        LinkedNode<T>* curNodePtr = m_first;
+        
+        while (curNodePtr)
+        {
+            cout << curNodePtr->m_data << ' ';
+            curNodePtr = curNodePtr->m_next;
+        }
+        
+        cout << endl;
+    }
     
 private:
     LinkedNode<T>* m_first = nullptr;
     LinkedNode<T>* m_last = nullptr;
     
 private:
-    LinkedNode<T> getNewNode(const T data)
+    
+    LinkedNode<T>* getNewNode(const T data)
     {
         LinkedNode<T>* newNode = new LinkedNode<T>(data);
         assert(newNode);
@@ -350,15 +375,24 @@ std::ostream& operator<<(std::ostream& output, const linked_list<T>& ref)
     if (ref.isEmpty())
     {
         output << "empty list" << endl;
-        return output;
     }
     
     LinkedNode<T>* curNodePtr = nullptr;
     for (curNodePtr = ref.m_first; curNodePtr != ref.m_last; curNodePtr = curNodePtr->m_next)
     {
         output << curNodePtr->m_data << ' ';
-        return output;
     }
+    
+    return output;
 }
+
+//tests
+
+//linked_list<int> list;
+//list.insert(5);
+//list.insert(6);
+//list.insert(8);
+//
+//list.print();
 
 #endif /* linked_list_h */
