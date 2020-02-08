@@ -304,6 +304,11 @@ public:
     
     void print() const
     {
+        if (isEmpty())
+        {
+            return;
+        }
+        
         LinkedNode<T>* curNodePtr = m_first;
         
         while (curNodePtr)
