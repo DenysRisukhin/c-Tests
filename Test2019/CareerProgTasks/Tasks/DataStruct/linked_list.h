@@ -113,9 +113,9 @@ public:
         return *this;
     }
     
-    bool operator==(const linked_list<T> ref)
+    bool operator==(const linked_list<T>& ref)
     {
-        return isSame(m_first, ref.m_first);
+        return isCompared(m_first, ref.m_first);
     }
     
     friend std::ostream& operator<<(std::ostream& output, const linked_list<T>& ref);
@@ -346,31 +346,31 @@ private:
         copy(nodeA->m_next, nodeB->m_next);
     }
     
-    bool isSame(const LinkedNode<T>* curList, const LinkedNode<T>* secondList)
+    bool isCompared(const LinkedNode<T>* curList, const LinkedNode<T>* secondList)
     {
-        bool isSame = false;
+        bool compared = false;
         
         if (!curList && !secondList)
         {
-            isSame = true;
+            compared = true;
         }
         else
         {
             if (!curList || !secondList)
             {
-                isSame = false;
+                compared = false;
             }
             else if (curList->m_data != secondList->m_data)
             {
-                isSame = false;
+                compared = false;
             }
             else
             {
-                isSame(curList->m_next, secondList->m_next);
+                isCompared(curList->m_next, secondList->m_next);
             }
         }
         
-        return isSame;
+        return compared;
     }
 };
 

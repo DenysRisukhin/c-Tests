@@ -201,10 +201,14 @@ TreeNode* createMinimalBST(vector<int> numbers)
 
 int main()
 {
-    linked_list<int> list;
-    list.insert(5);
-    list.insert(6);
-    list.insert(8);
+    double_list<int> list;
+    list.pushBack(5);
+    list.pushBack(6);
+    list.pushBack(8);
+    
+    list.pushFront(3);
+    list.pushFront(1);
+    list.pushFront(99);
     
     list.print();
     

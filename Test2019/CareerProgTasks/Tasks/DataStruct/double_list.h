@@ -26,15 +26,96 @@ class double_list
 public:
     double_list() { m_head = nullptr; }
     
-    double_list(const double_list<T>& list) {}
+    double_list(const double_list<T>& ref)
+    {
+        if (!ref.m_head)
+        {
+            m_head = nullptr;
+        }
+        else
+        {
+            copy(m_head, ref.m_head);
+        }
+    }
     
-    double_list(double_list<T>&& list) {}
+    double_list(double_list<T>&& ref)
+    {
+        if (!ref.m_head)
+        {
+            m_head = nullptr;
+        }
+        else
+        {
+            copy(m_head, ref.m_head);
+        }
+        
+        // is this correct?
+        ref.m_head = nullptr;
+    }
     
-    ~double_list() {}
+    ~double_list()
+    {
+        if (isEmpty())
+        {
+            return;
+        }
+        
+        DoubleNode<T>* curNodePtr = m_head;
+        DoubleNode<T>* tempNodePtr = nullptr;
+        
+        while (curNodePtr)
+        {
+            tempNodePtr = curNodePtr;
+            curNodePtr = curNodePtr->m_next;
+            delete tempNodePtr;
+        }
+    }
     
-    const double_list<T>& operator=(const double_list<T> list) {}
+    const double_list<T>& operator=(const double_list<T>& ref)
+    {
+        if (*this == ref)
+        {
+            return;
+        }
+        
+        if (ref.isEmpty())
+        {
+            m_head = nullptr;
+        }
+        else
+        {
+            copy(m_head, ref.m_head);
+        }
+        
+        return *this;
+    }
     
-    const bool operator==(const double_list<T> list) {}
+    const double_list<T>& operator=(double_list<T>&& ref)
+    {
+        if (*this == ref)
+        {
+            return;
+        }
+        
+        if (ref.isEmpty())
+        {
+            m_head = nullptr;
+        }
+        else
+        {
+            copy(m_head, ref.m_head);
+        }
+        
+        // is this correct?
+        ref.m_head = nullptr;
+        
+        return *this;
+    }
+    
+    const bool operator==(const double_list<T>& ref)
+    {
+        return isCompared(m_head, ref.m_head);
+    }
     
     bool isEmpty() const { return m_head == nullptr; }
     
@@ -64,14 +145,13 @@ public:
             return;
         }
         
-        while (curNodePtr)
+        while (curNodePtr->m_next)
         {
             curNodePtr = curNodePtr->m_next;
         }
         
-        curNodePtr->m_next = newNodePtr;
         newNodePtr->m_prev = curNodePtr;
-        m_head = newNodePtr;
+        curNodePtr->m_next = newNodePtr;
     }
     
     void remove(const T& data)
@@ -197,32 +277,45 @@ private:
         copy(nodeA->m_next, nodeB->m_next);
     }
     
-    bool isSame(const DoubleNode<T>* curList, const DoubleNode<T>* secondList)
+    bool isCompared(const DoubleNode<T>* curList, const DoubleNode<T>* secondList)
     {
-        bool isSame = false;
+        bool compared = false;
         
         if (!curList && !secondList)
         {
-            isSame = true;
+            compared = true;
         }
         else
         {
             if (!curList || !secondList)
             {
-                isSame = false;
+                compared = false;
             }
             else if (curList->m_data != secondList->m_data)
             {
-                isSame = false;
+                compared = false;
             }
             else
             {
-                isSame(curList->m_next, secondList->m_next);
+                isCompared(curList->m_next, secondList->m_next);
             }
         }
         
-        return isSame;
+        return compared;
     }
 };
+
+//test
+//
+//double_list<int> list;
+//list.pushBack(5);
+//list.pushBack(6);
+//list.pushBack(8);
+//
+//list.pushFront(3);
+//list.pushFront(1);
+//list.pushFront(99);
+//
+//list.print();
 
 #endif /* double_list_h */
