@@ -99,6 +99,8 @@
 		9E4294E723EDA45200A3708C /* Tree_6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_6.h; sourceTree = "<group>"; };
 		9E4294E823EDE31A00A3708C /* Tree_7.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_7.h; sourceTree = "<group>"; };
 		9E4294E923EDE34200A3708C /* Tree_8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree_8.h; sourceTree = "<group>"; };
+		9E4294EE23F01D2400A3708C /* list_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list_1.h; sourceTree = "<group>"; };
+		9E4294EF23F0245900A3708C /* list_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list_2.h; sourceTree = "<group>"; };
 		9E4F00FB23031FEA00A34B70 /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
 		9E5C539E231FBEF200D3ECF7 /* weak_ptr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = weak_ptr.h; sourceTree = "<group>"; };
 		9E60E30722D64CB70069397C /* dynamic_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dynamic_array.h; sourceTree = "<group>"; };
@@ -329,6 +331,17 @@
 			path = STL;
 			sourceTree = "<group>";
 		};
+		9E4294ED23F00FEF00A3708C /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				9EFC53CA22E88DE5006C2D2F /* linked_list.h */,
+				9EFC53CB22E88E27006C2D2F /* double_list.h */,
+				9E4294EE23F01D2400A3708C /* list_1.h */,
+				9E4294EF23F0245900A3708C /* list_2.h */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
 		9E82B04622C2191100B669C2 = {
 			isa = PBXGroup;
 			children = (
@@ -393,14 +406,13 @@
 		9EFC53C722E5E282006C2D2F /* DataStruct */ = {
 			isa = PBXGroup;
 			children = (
+				9E4294ED23F00FEF00A3708C /* Lists */,
 				9EFC53C822E5E2B5006C2D2F /* SmartPointers */,
 				9E4218C523C358890081904A /* Tree */,
 				9E3AE07A23B4DDF50053DA5A /* Graph */,
 				9E4218C123C355AB0081904A /* Queue */,
 				9EFC53C622E5D992006C2D2F /* Stack.h */,
 				9E60E30722D64CB70069397C /* dynamic_array.h */,
-				9EFC53CA22E88DE5006C2D2F /* linked_list.h */,
-				9EFC53CB22E88E27006C2D2F /* double_list.h */,
 				9EFC53CC22E88E87006C2D2F /* hash_table.h */,
 			);
 			path = DataStruct;

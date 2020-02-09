@@ -12,7 +12,7 @@
 template<typename T>
 struct LinkedNode
 {
-    LinkedNode(const T& data)
+    LinkedNode(const T& data) noexcept
         : m_data(data), m_next(nullptr) {}
     
     T m_data;
@@ -23,9 +23,9 @@ template<class T>
 class linked_list
 {
 public:
-    linked_list() { m_first = m_last = nullptr; }
+    linked_list() noexcept { m_first = m_last = nullptr; }
     
-    linked_list(const linked_list<T>& ref)
+    linked_list(const linked_list<T>& ref) noexcept
     {
         if (!ref.m_first)
         {
@@ -37,7 +37,7 @@ public:
         }
     }
     
-    linked_list(linked_list<T>&& ref)
+    linked_list(linked_list<T>&& ref) noexcept
     {
         if (!ref.m_first)
         {
@@ -71,7 +71,7 @@ public:
         }
     }
     
-    const linked_list<T>& operator=(const linked_list<T>& ref)
+    const linked_list<T>& operator=(const linked_list<T>& ref) noexcept
     {
         if (*this == ref)
         {
@@ -90,7 +90,7 @@ public:
         return *this;
     }
     
-    const linked_list<T>& operator=(linked_list<T>&& ref)
+    const linked_list<T>& operator=(linked_list<T>&& ref) noexcept
     {
         if (*this == ref)
         {
@@ -113,14 +113,14 @@ public:
         return *this;
     }
     
-    bool operator==(const linked_list<T>& ref)
+    bool operator==(const linked_list<T>& ref) noexcept
     {
         return isCompared(m_first, ref.m_first);
     }
     
     friend std::ostream& operator<<(std::ostream& output, const linked_list<T>& ref);
     
-    void pushFront(const T& data)
+    void pushFront(const T& data) noexcept
     {
         LinkedNode<T>* newNodePtr = getNewNode(data);
         
@@ -134,7 +134,7 @@ public:
         m_first = newNodePtr;
     }
     
-    void pushBack(const T& data)
+    void pushBack(const T& data) noexcept
     {
         LinkedNode<T>* newNodePtr = getNewNode(data);
         
@@ -148,7 +148,7 @@ public:
         m_last = newNodePtr;
     }
     
-    void popFront()
+    void popFront() noexcept
     {
         if (isEmpty())
         {
@@ -166,7 +166,7 @@ public:
         delete tempNodePtr;
     }
     
-    void popBack()
+    void popBack() noexcept
     {
         if (isEmpty())
         {
@@ -191,7 +191,7 @@ public:
         delete tempNodePtr;
     }
     
-    bool search(const T& data) const
+    bool search(const T& data) const noexcept
     {
         if (isEmpty())
         {
@@ -213,7 +213,7 @@ public:
         return false;
     }
     
-    void insert(const T& data)
+    void insert(const T& data) noexcept
     {
         LinkedNode<T>* newNodePtr = getNewNode(data);
         
@@ -250,7 +250,7 @@ public:
         m_last = newNodePtr;
     }
     
-    void remove(const T& data)
+    void remove(const T& data) noexcept
     {
         if (isEmpty())
         {
@@ -280,7 +280,7 @@ public:
         }
     }
     
-    bool isEmpty() const { return m_first == nullptr; }
+    bool isEmpty() const noexcept { return m_first == nullptr; }
     
     void reverse()
     {
@@ -302,7 +302,7 @@ public:
         m_first = meNodePtr;
     }
     
-    void print() const
+    void print() const noexcept
     {
         if (isEmpty())
         {
@@ -333,7 +333,7 @@ private:
         return newNode;
     }
     
-    void copy(const LinkedNode<T>*& nodeA, const LinkedNode<T>* nodeB)
+    void copy(const LinkedNode<T>*& nodeA, const LinkedNode<T>* nodeB) noexcept
     {
         if (!nodeB)
         {
@@ -346,7 +346,7 @@ private:
         copy(nodeA->m_next, nodeB->m_next);
     }
     
-    bool isCompared(const LinkedNode<T>* curList, const LinkedNode<T>* secondList)
+    bool isCompared(const LinkedNode<T>* curList, const LinkedNode<T>* secondList) noexcept
     {
         bool compared = false;
         

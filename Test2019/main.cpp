@@ -167,52 +167,11 @@ int abs(int a) {
     }
 }
 
-struct TreeNode
-{
-    TreeNode(): m_leftPtr(nullptr), m_rightPtr(nullptr), m_data(0) {}
-    TreeNode(int data): m_leftPtr(nullptr), m_rightPtr(nullptr), m_data(data) {}
-    
-    TreeNode* m_leftPtr = nullptr;
-    TreeNode* m_rightPtr = nullptr;
-    int m_data;
-};
 
-TreeNode* addToBST(vector<int> numbers, int start, int end)
-{
-    if (end < start)
-    {
-        return nullptr;
-    }
-    
-    int middle = (start + end) / 2;
-    
-    TreeNode* newNode = new TreeNode;
-    newNode->m_data = numbers[middle];
-    newNode->m_leftPtr = addToBST(numbers, start, middle - 1);
-    newNode->m_rightPtr = addToBST(numbers, middle + 1, end);
-    
-    return newNode;
-}
-
-TreeNode* createMinimalBST(vector<int> numbers)
-{
-    return addToBST(numbers, 0, numbers.size() - 1);
-}
 
 int main()
 {
-    double_list<int> list;
-    list.pushBack(5);
-    list.pushBack(6);
-    list.pushBack(8);
-    
-    list.pushFront(3);
-    list.pushFront(1);
-    list.pushFront(99);
-    
-    list.print();
-    
-    
+   
     cout << endl;
     
     return 0;

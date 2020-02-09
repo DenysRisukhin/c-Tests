@@ -12,7 +12,7 @@
 template<typename T>
 struct DoubleNode
 {
-    DoubleNode(const T& data)
+    DoubleNode(const T& data) noexcept
         : m_data(data), m_next(nullptr), m_prev(nullptr) {}
     
     int m_data;
@@ -24,9 +24,9 @@ template<typename T>
 class double_list
 {
 public:
-    double_list() { m_head = nullptr; }
+    double_list() noexcept { m_head = nullptr; }
     
-    double_list(const double_list<T>& ref)
+    double_list(const double_list<T>& ref) noexcept
     {
         if (!ref.m_head)
         {
@@ -38,7 +38,7 @@ public:
         }
     }
     
-    double_list(double_list<T>&& ref)
+    double_list(double_list<T>&& ref) noexcept
     {
         if (!ref.m_head)
         {
@@ -53,7 +53,7 @@ public:
         ref.m_head = nullptr;
     }
     
-    ~double_list()
+    ~double_list() noexcept
     {
         if (isEmpty())
         {
@@ -71,7 +71,7 @@ public:
         }
     }
     
-    const double_list<T>& operator=(const double_list<T>& ref)
+    const double_list<T>& operator=(const double_list<T>& ref) noexcept
     {
         if (*this == ref)
         {
@@ -90,7 +90,7 @@ public:
         return *this;
     }
     
-    const double_list<T>& operator=(double_list<T>&& ref)
+    const double_list<T>& operator=(double_list<T>&& ref) noexcept
     {
         if (*this == ref)
         {
@@ -112,14 +112,14 @@ public:
         return *this;
     }
     
-    const bool operator==(const double_list<T>& ref)
+    const bool operator==(const double_list<T>& ref) noexcept
     {
         return isCompared(m_head, ref.m_head);
     }
     
-    bool isEmpty() const { return m_head == nullptr; }
+    bool isEmpty() const noexcept { return m_head == nullptr; }
     
-    void pushFront(const T& data)
+    void pushFront(const T& data) noexcept
     {
         DoubleNode<T>* newNodePtr = getNewNode(data);
         
@@ -134,7 +134,7 @@ public:
         m_head = newNodePtr;
     }
     
-    void pushBack(const T& data)
+    void pushBack(const T& data) noexcept
     {
         DoubleNode<T>* newNodePtr = getNewNode(data);
         DoubleNode<T>* curNodePtr = m_head;
@@ -154,7 +154,7 @@ public:
         curNodePtr->m_next = newNodePtr;
     }
     
-    void remove(const T& data)
+    void remove(const T& data) noexcept
     {
         if (isEmpty())
         {
@@ -192,7 +192,7 @@ public:
         }
     }
     
-    bool search(const T& data) const
+    bool search(const T& data) const noexcept
     {
         if (isEmpty())
         {
@@ -214,7 +214,7 @@ public:
         return false;
     }
     
-    void reversePrint() const
+    void reversePrint() const noexcept
     {
         if (isEmpty())
         {
@@ -234,7 +234,7 @@ public:
         }
     }
     
-    void print() const
+    void print() const noexcept
     {
         if (isEmpty())
         {
@@ -264,7 +264,7 @@ private:
         return newNode;
     }
     
-    void copy(const DoubleNode<T>*& nodeA, const DoubleNode<T>* nodeB)
+    void copy(const DoubleNode<T>*& nodeA, const DoubleNode<T>* nodeB) noexcept
     {
         if (!nodeB)
         {
@@ -277,7 +277,7 @@ private:
         copy(nodeA->m_next, nodeB->m_next);
     }
     
-    bool isCompared(const DoubleNode<T>* curList, const DoubleNode<T>* secondList)
+    bool isCompared(const DoubleNode<T>* curList, const DoubleNode<T>* secondList) noexcept
     {
         bool compared = false;
         
@@ -306,7 +306,7 @@ private:
 };
 
 //test
-//
+
 //double_list<int> list;
 //list.pushBack(5);
 //list.pushBack(6);
