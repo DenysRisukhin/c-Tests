@@ -1,13 +1,13 @@
 //
-//  QueueFrom2Stack.h
+//  Queue_2.h
 //  Test2019
 //
-//  Created by Denys Risukhin on 1/6/20.
+//  Created by Denys Risukhin on 2/9/20.
 //  Copyright © 2020 DenysRisukhin. All rights reserved.
 //
 
-#ifndef QueueFrom2Stack_h
-#define QueueFrom2Stack_h
+#ifndef Queue_2_h
+#define Queue_2_h
 
 template <typename T>
 class queue {
@@ -47,4 +47,4 @@ private:
     }
 };
 
-#endif /* QueueFrom2Stack_h */
+#endif /* Queue_2_h */
