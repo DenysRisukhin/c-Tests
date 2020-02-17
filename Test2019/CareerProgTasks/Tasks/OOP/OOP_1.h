@@ -21,7 +21,7 @@
 //
 //нужно перестраховываться что бы не получить разные размеры ст-ры на разных платформах
 --------------------------
-#pragma pack - (push, 1)   // установили размер выравнивания в 1 байт
+#pragma pack - (push, ...)   // установили размер выравнивания в ... байт
 struct a {};
 #pragma pack(pop)          // вернули предыдущую настройку.
 --------------------------
@@ -94,10 +94,20 @@ struct a
 };
 #pragma pack(pop)
 
-// article
-В большинстве случаев (или просто предположим что сегодня это так) выравнивание размера структуры в памяти составляет 4 байта.
+// 8
+#pragma pack(push, 4)
+size = 8
+struct Foo
+{
+    char a;
+    short int value;
+    int b;
+};
+#pragma pack(pop)
 
-// ex 1
+// сново ставим в 4 байта
+
+// 9
 struct Foo
 {
     char ch;
@@ -113,7 +123,7 @@ struct Foo
 7 байт: value[2]
 8 байт: value[3]
 
-// ex 2
+// 10
 struct Foo
 {
     char ch;
@@ -130,11 +140,11 @@ struct Foo
 7 байт: value[2]
 8 байт: value[3]
 
-// ex 3
+// 11
 struct Foo
 {
     char ch;
-    short id;
+    short mid;
     short opt;
     int value;
 };
@@ -153,3 +163,7 @@ struct Foo
 12 байт: value[3]
 
 #endif /* OOP_1_h */
+
+
+
+

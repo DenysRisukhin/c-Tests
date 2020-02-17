@@ -313,50 +313,22 @@ void synchronization(map<int, int>& numbersMap, vector<int>& numbers)
     }
 }
 
-
+#pragma pack(push, 4)
+struct Foo
+{
+    char a;
+    short int value;
+    int b;
+};
+#pragma pack(pop)
 
 int main()
 {
-    // vec
-    srand(time(nullptr));
-
-    const int size = 20;
     
-    vector<int> numbers;
+    Foo obj;
     
-    initVec(numbers, size);
+    cout << sizeof(Foo) << endl;
     
-    printVec(numbers);
-    
-    removeFromVec(numbers);
-    
-    printVec(numbers);
-    
-    cout << endl;
-    
-    // map
-    map<int,int> numbersMap;
-    initMap(numbersMap, size);
-    
-    printMap(numbersMap);
-    
-    removeFromMap(numbersMap);
-    
-    printMap(numbersMap);
-    
-    cout << "last step:" << endl;
-
-    printVec(numbers);
-
-    printMap(numbersMap);
-
-    synchronization(numbersMap, numbers);
-    
-    cout << "result\n";
-    
-    printVec(numbers);
-    printMap(numbersMap);
-
     return 0;
 }
 
