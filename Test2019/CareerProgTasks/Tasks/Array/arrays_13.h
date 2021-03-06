@@ -35,6 +35,7 @@ void findSwapValues(int* arrA, int sizeA, int* arrB, int sizeB) {
                 //int values[2]{i, j};
                 //return values;
                 cout << arrA[i] << ' ' << arrB[j] << endl;
+                return;
             }
         }
     }

@@ -81,7 +81,7 @@ private:
     {
         if (!rootNode)
         {
-            rootNode = new Node<T>(rootNode);
+            rootNode = new Node<T>(rootNode); // ?
         }
         else if (data < rootNode->m_data)
         {

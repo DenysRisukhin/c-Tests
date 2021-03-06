@@ -56,7 +56,6 @@ int getBestYear()
             {
                 aliveCtr++;
             }
-            
         }
         
         if (aliveCtr > maxAliveCtr)

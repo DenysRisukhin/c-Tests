@@ -33,7 +33,8 @@ string checkMatrixType(int (*arr)[4], int size)
                     }
                 }
                 
-                if (arr[r][c] > 1 || arr[r][c] > 0)
+                // if (arr[r][c] > 1 || arr[r][c] > 0)
+                if (arr[r][c] > 0)
                 {
                     diagonalCtr++;
                 }

@@ -11,24 +11,29 @@
 
 using namespace std;
 
-class MathOperationsDelegate {
+class MathOperationsDelegate
+{
 public:
     virtual void calcultedSum(int res) = 0;
     virtual void calcultedDot(int res) = 0;
 };
 
-class MathOperations {
+class MathOperations
+{
 public:
-    void setDelegate(MathOperationsDelegate* delegate) {
+    void setDelegate(MathOperationsDelegate* delegate)
+    {
         m_delegate = delegate;
     }
     
-    void sum(int a, int b) {
+    void sum(int a, int b)
+    {
         auto res = a + b;
         m_delegate->calcultedSum(res);
     }
     
-    void dot(int a, int b) {
+    void dot(int a, int b)
+    {
         auto res = a * b;
         m_delegate->calcultedDot(res);
     }
@@ -42,13 +47,16 @@ private:
     //list<delegate*> delegates;
 };
 
-class HomeScreen: public MathOperationsDelegate {
+class HomeScreen: public MathOperationsDelegate
+{
 public:
-    void calcultedSum(int res) {
+    void calcultedSum(int res)
+    {
         cout << "sum = " << res << endl;
     }
     
-    void calcultedDot(int res) {
+    void calcultedDot(int res)
+    {
         cout << "dot = " << res << endl;
     }
 };

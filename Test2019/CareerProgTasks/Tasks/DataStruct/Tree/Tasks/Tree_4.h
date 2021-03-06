@@ -12,8 +12,9 @@
 struct TreeNode
 {
     TreeNode(): m_leftPtr(nullptr), m_rightPtr(nullptr), m_data(0) {}
-    TreeNode(int data): m_leftPtr(nullptr), m_rightPtr(nullptr), m_data(data) {}
+    TreeNode(const int& data): m_leftPtr(nullptr), m_rightPtr(nullptr), m_data(data) {}
     
+private:
     TreeNode* m_leftPtr = nullptr;
     TreeNode* m_rightPtr = nullptr;
     int m_data;
@@ -21,7 +22,7 @@ struct TreeNode
 
 #pragma mark - a
 
-void nodesOnLevel(const TreeNode* root, int& curLevel, int level, TreeNode*& listHeader, TreeNode*& curListNode)
+void nodesOnLevel(const TreeNode* root, int& curLevel, const int level, TreeNode*& listHeader, TreeNode*& curListNode)
 {
     if (root)
     {

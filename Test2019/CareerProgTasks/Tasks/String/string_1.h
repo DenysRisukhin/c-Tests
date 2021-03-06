@@ -9,7 +9,8 @@
 #ifndef string_1_h
 #define string_1_h
 
-string compress(string text) {
+string compress(string text)
+{
     string resStr;
     int i = 0;
     int ctr = 0;

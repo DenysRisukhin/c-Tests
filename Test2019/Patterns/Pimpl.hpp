@@ -53,8 +53,7 @@ private:
     // Private* m_dPtr
     // на
     //deep_const_ptr<Private> m_dPtr;
-    // 1 сп устраняет проблему нарушения const корректности
-    
+    // 1 сп устраняет проблему нарушения const корректност
 };
 
 #endif /* Pimpl_hpp */

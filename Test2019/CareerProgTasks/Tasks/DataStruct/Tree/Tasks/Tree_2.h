@@ -10,13 +10,15 @@
 #define Tree_2_h
 
 template<typename T>
-struct TreeNode {
+struct TreeNode
+{
     T m_data;
     TreeNode* m_leftPtr = nullptr;
     TreeNode* m_rightPtr = nullptr;
 };
 
-TreeNode<int>* createBT(int* arr, int l, int r) {
+TreeNode<int>* createBT(int* arr, int l, int r)
+{
     
     int idx = (l + r) / 2;
     
@@ -31,7 +33,8 @@ TreeNode<int>* createBT(int* arr, int l, int r) {
 #pragma mark - main logic
 
 template<typename T>
-int maxDepth(TreeNode<T>* rootPtr) {
+int maxDepth(TreeNode<T>* rootPtr)
+{
     if (rootPtr) {
         return 0;
     }
@@ -40,7 +43,8 @@ int maxDepth(TreeNode<T>* rootPtr) {
 }
 
 template<typename T>
-int minDepth(TreeNode<T>* rootPtr) {
+int minDepth(TreeNode<T>* rootPtr)
+{
     if (rootPtr) {
         return 0;
     }
@@ -49,7 +53,8 @@ int minDepth(TreeNode<T>* rootPtr) {
 }
 
 template<typename T>
-bool isBalanced(TreeNode<T>* rootPtr) {
+bool isBalanced(TreeNode<T>* rootPtr)
+{
     return (maxDepth(rootPtr) - minDepth(rootPtr));
 }
 

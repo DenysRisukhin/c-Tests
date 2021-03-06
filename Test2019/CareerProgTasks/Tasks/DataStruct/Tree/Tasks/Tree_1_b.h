@@ -99,41 +99,42 @@ public:
         newNode->m_left = nullptr;
         newNode->m_right = nullptr;
         
-        if (this->m_rootNode == nullptr)
+        if (!this->m_rootNode)
         {
             this->m_rootNode = newNode;
+            return;
         }
-        else
+        
+       
+        curNode = this->m_rootNode;
+        
+        while(curNode)
         {
-            curNode = this->m_rootNode;
+            trailNode = curNode;
             
-            while(curNode)
-            {
-                trailNode = curNode;
-                
-                if (curNode->m_data == data) {
-                    std::cout << "data has already added to tree" << std::endl;
-                    return;
-                }
-                else if (curNode->m_data > data)
-                {
-                    curNode = curNode->m_left;
-                }
-                else
-                {
-                    curNode = curNode->m_right;
-                }
+            if (curNode->m_data == data) {
+                std::cout << "data has already added to tree" << std::endl;
+                return;
             }
-            
-            if (trailNode->m_data > data)
+            else if (curNode->m_data > data)
             {
-                trailNode->m_left = newNode;
+                curNode = curNode->m_left;
             }
             else
             {
-                trailNode->m_right = newNode;
+                curNode = curNode->m_right;
             }
         }
+        
+        if (trailNode->m_data > data)
+        {
+            trailNode->m_left = newNode;
+        }
+        else
+        {
+            trailNode->m_right = newNode;
+        }
+        
     }
     
     void remove(const T& data)
@@ -142,70 +143,69 @@ public:
         Node<T>* trailNode = nullptr;
         bool isFound = false;
         
-        if (this->m_rootNode == nullptr)
+        if (!this->m_rootNode)
         {
             return;
         }
-        else
+        
+        curNode = this->m_rootNode;
+        trailNode = this->m_rootNode;
+        
+        while(curNode && !isFound)
         {
-            curNode = this->m_rootNode;
-            trailNode = this->m_rootNode;
-            
-            while(curNode && !isFound)
+            if (curNode->m_data == data)
             {
-                if (curNode->m_data == data)
+                isFound = true;
+            }
+            else
+            {
+                trailNode = curNode;
+                if (curNode->m_data > data)
                 {
-                    isFound = true;
+                    curNode = curNode->m_left;
                 }
                 else
                 {
-                    trailNode = curNode;
-                    if (curNode->m_data > data)
-                    {
-                        curNode = curNode->m_left;
-                    }
-                    else
-                    {
-                        curNode = curNode->m_right;
-                    }
-                }
-            }
-            
-            if (!curNode)
-            {
-                std::cout << "node with data hasn't fined in tree" << std::endl;
-            }
-            else if (isFound)
-            {
-                if (curNode == this->m_rootNode)
-                {
-                    removeNode(curNode);
-                }
-                else if (trailNode->m_data > data)
-                {
-                    removeNode(trailNode->m_left);
-                }
-                else
-                {
-                    removeNode(trailNode->m_right);
+                    curNode = curNode->m_right;
                 }
             }
         }
         
+        if (!curNode)
+        {
+            std::cout << "node with data hasn't fined in tree" << std::endl;
+        }
+        else if (isFound)
+        {
+            if (curNode == this->m_rootNode)
+            {
+                removeNode(curNode);
+            }
+            else if (trailNode->m_data > data)
+            {
+                removeNode(trailNode->m_left);
+            }
+            else
+            {
+                removeNode(trailNode->m_right);
+            }
+        }
     }
     
 private:
     void removeNode(Node<T>*& node)
     {
+        if (!node)
+        {
+           return;
+        }
+        
         Node<T>* curNode = nullptr;
         Node<T>* trailNode = nullptr;
         Node<T>* tempNode = nullptr;
         
-        if (!node)
-        {
-            return;
-        }
-        else if (!node->m_left && !node->m_right)
+       
+        if (!node->m_left && !node->m_right)
         {
             tempNode = node;
             node = nullptr;

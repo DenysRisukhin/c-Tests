@@ -9,7 +9,8 @@
 #ifndef arrays_1_h
 #define arrays_1_h
 
-void merge(int* arrA, int sizeA, int* arrB, int sizeB, int* arrC, int sizeC) {
+void merge(int* arrA, int sizeA, int* arrB, int sizeB, int* arrC, int sizeC)
+{
     int ctr = 0;
     int ctrA = 0;
     int ctrB = 0;

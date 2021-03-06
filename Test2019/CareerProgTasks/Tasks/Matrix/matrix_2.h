@@ -18,15 +18,15 @@ int rotate(int** arr, const int size)
         int first = layer;
         int last = size - 1 - layer;
         
-        for (int i = first; i < last; ++i)
+        for (int j = first; j < last; ++j)
         {
-            int offset = i - first;
-            int top = arr[first][i];
+            int offset = j - first;
+            int top = arr[first][j];
             
-            arr[first][i] = arr[last - offset][first];
+            arr[first][j] = arr[last - offset][first];
             arr[last - offset][first] = arr[last][last - offset];
-            arr[last][last - offset] = arr[i][last];
-            arr[i][last] = top;
+            arr[last][last - offset] = arr[j][last];
+            arr[j][last] = top;
             
             cycleCount++;
         }

@@ -11,7 +11,8 @@
 
 #pragma mark - case a
 
-void insert(int* arr, int& height, int size, int val) {
+void insert(int* arr, int& height, int size, int val)
+{
     if (arr[height - 1] < val)
     {
         arr[height] = val;
@@ -36,7 +37,8 @@ void insert(int* arr, int& height, int size, int val) {
         }
     }
     
-    for (int i = height - 1; i >= left; i--) {
+    for (int i = height - 1; i >= left; i--)
+    {
         arr[i+1] = arr[i];
     }
     

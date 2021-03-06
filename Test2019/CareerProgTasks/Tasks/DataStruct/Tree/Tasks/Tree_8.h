@@ -19,7 +19,7 @@ struct TreeNode
     int m_data;
 };
 
-TreeNode* addToBST(vector<int> numbers, int start, int end)
+TreeNode* addToBST(const vector<int>& numbers, const int& start, const int& end)
 {
     if (end < start)
     {

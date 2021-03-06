@@ -21,7 +21,8 @@ void getMaxSubSum(int* arr, int size) {
     
     for (i = 0; i < size; i++)
     {
-        if (arr[i] < 0) {
+        if (arr[i] < 0)
+        {
             if (bestSum < curSum)
             {
                 firstIdx = curFirstIdx;

@@ -9,6 +9,9 @@
 #ifndef arrays_9_h
 #define arrays_9_h
 
+// смотря что еще имеется ввиду
+// возможно нужно просто найти мин положит число в массиве и вернуть его
+
 int getClosestToZero(int* arr, int size) {
     if (arr == nullptr || size == 0)
     {

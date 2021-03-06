@@ -259,7 +259,9 @@ link----> https://www.geeksforgeeks.org/quick-sort/
 void mergeSort(int * _arr, int * _helper, int _low, int _middle, int _hight)
 {
     for (int i = _low; i <= _hight; i++)
-    _helper[i] = _arr[i];
+    {
+        _helper[i] = _arr[i];
+    }
     
     int helperLeft = _low;
     int helperRight = _middle + 1;
@@ -269,15 +271,11 @@ void mergeSort(int * _arr, int * _helper, int _low, int _middle, int _hight)
     {
         if (_helper[helperLeft] <= _helper[helperRight])
         {
-            _arr[current] = _helper[helperLeft];
-            
-            helperLeft++;
+            _arr[current] = _helper[helperLeft++];
         }
         else
         {
-            _arr[current] = _helper[helperRight];
-            
-            helperRight++;
+            _arr[current] = _helper[helperRight++];
         }
         
         current++;
@@ -286,10 +284,12 @@ void mergeSort(int * _arr, int * _helper, int _low, int _middle, int _hight)
     int remaning = _middle - helperLeft;
     
     for (int i = 0; i <= remaning; i++)
-    _arr[current + i] = _helper[helperLeft + i];
+    {
+        _arr[current + i] = _helper[helperLeft + i];
+    }
 }
 
-void mergeSort(int * _arr, int * _helper, int _low, int _hight)
+void mergeSort(int* _arr, int* _helper, int _low, int _hight)
 {
     if (_low < _hight)
     {
@@ -310,9 +310,9 @@ void mergeSort(int * _arr, int * _helper, int _low, int _hight)
     cout << endl << "end recursion" << endl << endl;
 }
 
-void mergeSort(int * _arr, int _size)
+void mergeSort(int* _arr, int _size)
 {
-    int * helper = new int[_size];
+    int* helper = new int[_size];
     
     mergeSort(_arr, helper, 0, _size - 1);
     
@@ -335,51 +335,34 @@ void swap(int & a,
     b = t;
 }
 
+// add sort from the end
 void boubleSort(int * _arr,
                 int _size
                 )
 {
     for (int i = 0; i < _size; i++)
-    for (int j = 0; j < _size - i; j++)
-    if (_arr[j] > _arr[j + 1])
-    swap(_arr[j], _arr[j + 1]);
-}
-
-int binarySearch(int * _arr,
-                 int _r,
-                 int _val
-                 )
-{
-    int left = 0;
-    int right = _r;
-    
-    while (left <= right)
-    {
-        int middle = (left + right) / 2;
-        
-        if (_arr[middle] == _val)
-        return middle
-        else if (_val < _arr[middle])
-        right = middle - 1;
-        else if (_arr[middle] < _val)
-        left = middle + 1;
-    }
-    
-    return -1;
+        for (int j = 0; j < _size - i; j++)
+            if (_arr[j] > _arr[j + 1])
+                swap(_arr[j], _arr[j + 1]);
 }
 
 #pragma mark - quickSort Sort
 
-int processing(int * _array, int _l, int _h) {
+int processing(int * _array, int _l, int _h)
+{
     int pivot = _array[(_l + _h) / 2];
     
     while (_l <= _h)
     {
         while (_array[_l] < pivot)
-        _l++;
+        {
+            _l++;
+        }
         
         while (pivot < _array[_h])
-        _h--;
+        {
+            _h--;
+        }
         
         if (_l <= _h)
         {
@@ -396,10 +379,14 @@ void quickSort(int * _array, int _l, int _h) {
     int index = processing(_array, _l, _h);
     
     if (_l < index - 1)
-    quickSort(_array, _l, index - 1);
+    {
+        quickSort(_array, _l, index - 1);
+    }
     
     if (index < _h )
-    quickSort(_array, index, _h);
+    {
+        quickSort(_array, index, _h);
+    }
     
 }
 
@@ -415,8 +402,8 @@ void selectionSort(int *arr, int n) {
         // Find the minimum element in unsorted array
         min_idx = i;
         for (j = i + 1; j < n; j++)
-        if (arr[min_idx] > arr[j])
-        min_idx = j;
+            if (arr[min_idx] > arr[j])
+                min_idx = j;
         
         // Swap the found minimum element with the first element
         swap(arr[min_idx], arr[i]);
@@ -435,8 +422,8 @@ void selectionStableSort(int *arr, int size) {
         // Find minimum element from arr[i] to arr[n - 1].
         int min_idx = i;
         for (int j = i + 1; j < size; j++)
-        if (arr[min_idx] > arr[j])
-        min_idx = j;
+            if (arr[min_idx] > arr[j])
+                min_idx = j;
         
         // Move minimum element at current i.
         int value = arr[min_idx];
@@ -450,19 +437,22 @@ void selectionStableSort(int *arr, int size) {
 
 #pragma mark - Insertion Sort
 
-void insertionSort(int* arr, int size) {
+void insertionSort(int* arr, int size)
+{
     int i, key, j;
     
-    for (i = 1; i < size; i++) {
+    for (i = 1; i < size; i++)
+    {
         key = arr[i];
         j = i - 1;
         
         /* Move elements of arr[0..i-1], that are
          greater than key, to one position ahead (вперед) of their current position */
         
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j -= 1;
+        while (j >= 0 && arr[j] > key)
+        {
+            arr[j + 1] = arr[j--];
+            //j -= 1;
         }
         arr[j + 1] = key;
     }

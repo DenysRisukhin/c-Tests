@@ -12,7 +12,7 @@
 struct TreeNode
 {
     TreeNode(): m_leftPtr(nullptr), m_rightPtr(nullptr), m_data(0) {}
-    TreeNode(int data): m_leftPtr(nullptr), m_rightPtr(nullptr), m_data(data) {}
+    TreeNode(const int& data): m_leftPtr(nullptr), m_rightPtr(nullptr), m_data(data) {}
     
     TreeNode* m_leftPtr = nullptr;
     TreeNode* m_rightPtr = nullptr;
@@ -26,10 +26,10 @@ struct TreeNode
 bool isIdentical(TreeNode* root1, TreeNode* root2)
 {
     /* base cases */
-    if (root1 == NULL && root2 == NULL)
+    if (root1 == nullptr && root2 == nullptr)
         return true;
     
-    if (root1 == NULL || root2 == NULL)
+    if (root1 == nullptr || root2 == nullptr)
         return false;
     
     /* Check if the data of both roots is
@@ -37,7 +37,8 @@ bool isIdentical(TreeNode* root1, TreeNode* root2)
      subtrees are also same */
     return (root1->m_data == root2->m_data &&
             isIdentical(root1->m_leftPtr, root2->m_leftPtr) &&
-            isIdentical(root1->m_rightPtr, root2->m_rightPtr) );
+            isIdentical(root1->m_rightPtr, root2->m_rightPtr)
+           );
 }
 
 /* This function returns true if S
@@ -66,11 +67,10 @@ bool isSubtree(TreeNode* globalTree, TreeNode* subTree)
  and NULL left and right pointers. */
 TreeNode* newNode(int data)
 {
-    TreeNode* Node = new TreeNode;
-    Node->m_data = data;
-    Node->m_leftPtr = NULL;
-    Node->m_rightPtr = NULL;
-    return(Node);
+    TreeNode* node = new TreeNode(data);
+    node->m_leftPtr = NULL;
+    node->m_rightPtr = NULL;
+    return node;
 }
 
 // test

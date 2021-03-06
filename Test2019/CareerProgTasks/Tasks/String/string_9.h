@@ -52,7 +52,7 @@ int i_atoi(const char* str) {
     int sign = 1; // sign as positiv
     int result = 0;
     
-    // 5. sign handling
+    // 5. sign checking
     if (str[digit] == '-') {
         sign = -1;
         digit++;
@@ -79,8 +79,10 @@ int i_atoi(const char* str) {
         // 3. int range check
         //  INT_MAX is 2147483647
         //  INT_MIN is -2147483648
-        if (result >  INT_MAX / 10 ||
-            (result == INT_MAX / 10 && str[digit]-'0' > INT_MAX % 10))
+        if (
+             result > INT_MAX / 10 ||
+             (result == INT_MAX / 10 && str[digit]-'0' > INT_MAX % 10)
+           )
         {
             if(sign > 0)
             {

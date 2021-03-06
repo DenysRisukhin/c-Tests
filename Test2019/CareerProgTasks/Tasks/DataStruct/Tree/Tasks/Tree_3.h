@@ -12,7 +12,7 @@
 template<typename T>
 struct TreeNode
 {
-    TreeNode(T data): m_data(data) {}
+    TreeNode(const T& data): m_data(data) {}
     
     TreeNode* m_leftPtr = nullptr;
     TreeNode* m_rightPtr = nullptr;
@@ -23,8 +23,8 @@ struct TreeNode
 
 TreeNode<T>* createNewNode(int data)
 {
-    TreeNode* tempNodePtr = new TreeNode;
-    tempNodePtr->m_data = data;
+    TreeNode* tempNodePtr = new TreeNode(data);
+    //tempNodePtr->m_data = data;
     tempNodePtr->m_parent = tempNodePtr->m_leftPtr = tempNodePtr->m_rightPtr = nullptr;
     return tempNodePtr;
 }

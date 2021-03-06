@@ -16,7 +16,8 @@
 bool isUnique(string str) {
     bool charSet[256] {false};
     
-    for (int i = 0; i < str.length(); i++) {
+    for (int i = 0; i < str.length(); i++)
+    {
         int val = str[i];
         
         if (charSet[val])

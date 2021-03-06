@@ -101,13 +101,11 @@
 		9E4294EE23F01D2400A3708C /* list_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list_1.h; sourceTree = "<group>"; };
 		9E4294EF23F0245900A3708C /* list_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list_2.h; sourceTree = "<group>"; };
 		9E4294F023F02D0A00A3708C /* Queue_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue_2.h; sourceTree = "<group>"; };
-		9E4294F123F171EC00A3708C /* test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
-		9E4294F323FADB0B00A3708C /* OOP_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OOP_1.h; sourceTree = "<group>"; };
-		9E4294F423FADE2900A3708C /* OOP_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OOP_2.h; sourceTree = "<group>"; };
 		9E4F00FB23031FEA00A34B70 /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
 		9E5C539E231FBEF200D3ECF7 /* weak_ptr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = weak_ptr.h; sourceTree = "<group>"; };
 		9E60E30722D64CB70069397C /* dynamic_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dynamic_array.h; sourceTree = "<group>"; };
 		9E60E34922DF2A0F0069397C /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		9E73D9612580251C00236C6F /* Global_logic_task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global_logic_task.h; sourceTree = "<group>"; };
 		9E82B04F22C2191200B669C2 /* Test2019 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test2019; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E82B05222C2191200B669C2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9E82B05922C5307100B669C2 /* auto_ptr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = auto_ptr.h; sourceTree = "<group>"; };
@@ -115,9 +113,18 @@
 		9E82B06022CA09CB00B669C2 /* smart_ptr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = smart_ptr.h; sourceTree = "<group>"; };
 		9E82B08522D4ECD900B669C2 /* graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = graph.h; sourceTree = "<group>"; };
 		9E8847C5232BF58B00DD2E40 /* GraphTestInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphTestInfo.h; sourceTree = "<group>"; };
+		9E9134BC257EA48F00072D87 /* PolymorphicVecCopy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PolymorphicVecCopy.h; sourceTree = "<group>"; };
 		9E977A2622FE12310026F7A7 /* AbstractFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbstractFactory.h; sourceTree = "<group>"; };
 		9E977A2822FE1DB40026F7A7 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		9E977A2922FED16B0026F7A7 /* Builder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Builder.h; sourceTree = "<group>"; };
+		9EB28179259FAEF5006B5898 /* SingleResponsibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleResponsibility.h; sourceTree = "<group>"; };
+		9EB2817A259FAF18006B5898 /* OpenClosed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenClosed.h; sourceTree = "<group>"; };
+		9EB2817B259FAF34006B5898 /* LiskovSubstitution.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiskovSubstitution.h; sourceTree = "<group>"; };
+		9EB2817C259FAF4C006B5898 /* InterfaceSegregation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceSegregation.h; sourceTree = "<group>"; };
+		9EB2817D259FAF67006B5898 /* DependencyOfInversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DependencyOfInversion.h; sourceTree = "<group>"; };
+		9EB682F12582627C007EF22F /* test1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test1.h; sourceTree = "<group>"; };
+		9EB682F22582848F007EF22F /* 2demVec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 2demVec.h; sourceTree = "<group>"; };
+		9EB682F32582BEC7007EF22F /* functionUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = functionUsage.h; sourceTree = "<group>"; };
 		9EDA544D23BD005400B38E91 /* Pimpl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pimpl.cpp; sourceTree = "<group>"; };
 		9EDA544E23BD005400B38E91 /* Pimpl.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pimpl.hpp; sourceTree = "<group>"; };
 		9EDA545023BE0B5500B38E91 /* Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Delegate.h; sourceTree = "<group>"; };
@@ -149,6 +156,7 @@
 			children = (
 				9E3AE07723B4D4770053DA5A /* Transaction.cpp */,
 				9E3AE07823B4D4770053DA5A /* Transaction.hpp */,
+				9E4294BC23DFE78700A3708C /* Rand */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 		9E4294DE23EACB5400A3708C /* STL */ = {
 			isa = PBXGroup;
 			children = (
+				9E9134BC257EA48F00072D87 /* PolymorphicVecCopy.h */,
 			);
 			path = STL;
 			sourceTree = "<group>";
@@ -345,13 +354,12 @@
 			path = Lists;
 			sourceTree = "<group>";
 		};
-		9E4294F223FADAF600A3708C /* OOP */ = {
+		9E73D9602580250100236C6F /* OOP */ = {
 			isa = PBXGroup;
 			children = (
-				9E4294F323FADB0B00A3708C /* OOP_1.h */,
-				9E4294F423FADE2900A3708C /* OOP_2.h */,
+				9E73D9612580251C00236C6F /* Global_logic_task.h */,
 			);
-			path = OOP;
+			name = OOP;
 			sourceTree = "<group>";
 		};
 		9E82B04622C2191100B669C2 = {
@@ -385,6 +393,7 @@
 		9E977A2522FE11FE0026F7A7 /* Patterns */ = {
 			isa = PBXGroup;
 			children = (
+				9EB28178259FAECF006B5898 /* SOLID */,
 				9EDA545823BE962A00B38E91 /* Delegate */,
 				9EDA545123BE4BA100B38E91 /* Observer */,
 				9E977A2622FE12310026F7A7 /* AbstractFactory.h */,
@@ -395,6 +404,28 @@
 				9EDA544E23BD005400B38E91 /* Pimpl.hpp */,
 			);
 			path = Patterns;
+			sourceTree = "<group>";
+		};
+		9EB28178259FAECF006B5898 /* SOLID */ = {
+			isa = PBXGroup;
+			children = (
+				9EB28179259FAEF5006B5898 /* SingleResponsibility.h */,
+				9EB2817A259FAF18006B5898 /* OpenClosed.h */,
+				9EB2817B259FAF34006B5898 /* LiskovSubstitution.h */,
+				9EB2817C259FAF4C006B5898 /* InterfaceSegregation.h */,
+				9EB2817D259FAF67006B5898 /* DependencyOfInversion.h */,
+			);
+			path = SOLID;
+			sourceTree = "<group>";
+		};
+		9EB682F02582625D007EF22F /* testPrpare */ = {
+			isa = PBXGroup;
+			children = (
+				9EB682F12582627C007EF22F /* test1.h */,
+				9EB682F22582848F007EF22F /* 2demVec.h */,
+				9EB682F32582BEC7007EF22F /* functionUsage.h */,
+			);
+			path = testPrpare;
 			sourceTree = "<group>";
 		};
 		9EDA545123BE4BA100B38E91 /* Observer */ = {
@@ -445,7 +476,8 @@
 		9EFC53CD22EB7EC0006C2D2F /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				9E4294F223FADAF600A3708C /* OOP */,
+				9EB682F02582625D007EF22F /* testPrpare */,
+				9E73D9602580250100236C6F /* OOP */,
 				9E4294D823EACA4100A3708C /* Games */,
 				9E4294DE23EACB5400A3708C /* STL */,
 				9E4294D723EACA1500A3708C /* CompaniesTasks */,
@@ -455,8 +487,6 @@
 				9E4294B523DF580E00A3708C /* Matrix */,
 				9E4294BB23DFE75400A3708C /* String */,
 				9EFC53C722E5E282006C2D2F /* DataStruct */,
-				9E4294BC23DFE78700A3708C /* Rand */,
-				9E4294F123F171EC00A3708C /* test.h */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";

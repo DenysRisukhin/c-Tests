@@ -59,6 +59,7 @@ public:
     // get() - возвр указатель в сыром виде
     // reset() - указатель становится пустым и затирает данные на которые он указывает
     // release() - указатель становится пустым, но данные не затираются и остаются в памяти
+    
     explicit shared_ptr(T *ref) {
         std::unique_ptr<T> holder(ref);
         // new может кинуть исключение, и, если p не передать в unique_ptr,
@@ -80,7 +81,7 @@ public:
         add_ref();
     }
     
-    // c-tor shifting
+    // c-tor moving
     shared_ptr(T&& ref) noexcept: m_ptr(ref.m_ptr), m_refCount(ref.m_refCount) {
         ref.m_ptr = nullptr;
         ref.m_refCount = nullptr;

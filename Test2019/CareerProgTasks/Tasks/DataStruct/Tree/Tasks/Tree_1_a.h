@@ -34,35 +34,70 @@ public:
     
     binary_tree(const binary_tree<T>& tree) noexcept
     {
-        if (tree) {
-            copy(m_rootNode, tree.m_rootNode);
-        } else {
+        if (!tree)
+        {
             m_rootNode = nullptr;
+            return;
         }
+
+        copy(m_rootNode, tree.m_rootNode);
     }
     
     binary_tree(binary_tree<T>&& tree) noexcept
     {
+        if (!tree)
+        {
+            m_rootNode = nullptr;
+            return;
+        }
+
+        copy(m_rootNode, tree.m_rootNode);
         
+        tree = nullptr; // ? i think it's ok but needs to check
+        // or
+        // tree.m_rootNode = nullptr;
     }
     
     binary_tree& operator=(const binary_tree<T>& tree)
     {
-        if (this != tree) {
-            if(m_rootNode) {
+        if (this != tree)
+        {
+            // maybe needs fix
+//            if(m_rootNode)
+//            {
+//                destroy(m_rootNode);
+//            }
+//            else if (!tree.m_rootNode)
+//            {
+//                m_rootNode = nullptr;
+//            }
+//            else
+//            {
+//                copy(m_rootNode, tree.m_rootNode);
+//            }
+            
+        // fix: firstly we must remove current tree
+            if(m_rootNode)
+            {
                 destroy(m_rootNode);
-            } else if (!tree.m_rootNode) {
+            }
+            
+            if (!tree.m_rootNode)
+            {
                 m_rootNode = nullptr;
-            } else {
+            }
+            else
+            {
                 copy(m_rootNode, tree.m_rootNode);
             }
         }
+        
         return *this;
     }
     
     binary_tree& operator=(binary_tree<T>&& tree)
     {
-        
+        // add logic
     }
     
     ~binary_tree() { destroy(m_rootNode); }
@@ -77,6 +112,9 @@ public:
     
     int getNodeCount() const noexcept { getNodeCount(m_rootNode); }
     int getHeight() const noexcept { getHeight(m_rootNode); }
+    
+    
+    // why do i need this method?
     void linkLevelN() const noexcept { getHeight(m_rootNode); }
     
 protected:
@@ -113,7 +151,7 @@ private:
     
     void copy(Node<T>*& rootNode, Node<T>* otherNode) noexcept
     {
-        if (otherNode == nullptr)
+        if (!otherNode)
         {
             rootNode = nullptr;
         }
@@ -137,7 +175,7 @@ private:
         }
     }
     
-    // special stuff
+#pragma mark - special stuff
     
     int getNodeAmounts(Node<T>* rootNode) const noexcept
     {
@@ -162,7 +200,7 @@ private:
             
             if (rootNode->m_right)
             {
-                right =  getNodeCount(rootNode->m_right);
+                right = getNodeCount(rootNode->m_right);
             }
             else
             {
@@ -207,7 +245,8 @@ private:
         int cnt;
         int cntNext;
         
-        if (rootNode == nullptr) {
+        if (rootNode == nullptr)
+        {
             return;
         }
         
@@ -215,27 +254,33 @@ private:
         cnt = 1;
         cntNext = 0;
         
-        while(!queue.empty()) {
+        while(!queue.empty())
+        {
             curNode = queue.front();
             queue.pop();
             
-            if (curNode->m_left) {
+            if (curNode->m_left)
+            {
                 queue,push(curNode->m_left);
                 cntNext++;
             }
             
-            if (curNode->m_right) {
+            if (curNode->m_right)
+            {
                 queue,push(curNode->m_right);
                 cntNext++;
             }
             
-            if (prevNode) {
+            if (prevNode)
+            {
                 prevNode->m_next = prevNode;
             }
             
             prevNode = curNode;
             cnt--;
-            if (cnt == 0) {
+            
+            if (cnt == 0)
+            {
                 cnt = cntNext;
                 cntNext = 0;
                 prevNode = nullptr;
